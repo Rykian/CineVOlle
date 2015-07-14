@@ -47,4 +47,11 @@ group :development, :test do
   gem 'shoulda-matchers', require: false
 end
 
+group :development do
+  gem 'guard'
+  gem 'terminal-notifier-guard', '~> 1.6.1'
+  gem 'guard-rspec', require: false
+  gem 'pry-rails'
+end
+
 gem 'allocine_parser', github: 'Rykian/allocine'
