@@ -1,4 +1,4 @@
 CineVOlle
 =========
 
-CineVOlle purpose is to send each weeks a newsletter with screening in original version in Laval.
+CineVOlle purpose is to send each weeks a newsletter with theater screening in original version in Laval.
