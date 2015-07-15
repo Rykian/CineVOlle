@@ -1,0 +1,12 @@
+fr:
+  header:
+    home: Accueil
+    about: A propos
+    contact: Contact
+  welcome:
+    description: Avoir un mail, chaque semaine, contenant vos séances en VO au Cinéville de Laval
+    signup: S'inscrire
+  email:
+    add:
+      success: Votre adresse email a été ajoutée avec succès à notre liste
+      error: Votre adresse email est déjà présente dans notre base ou est mal formée

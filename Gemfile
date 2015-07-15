@@ -11,7 +11,7 @@ gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.1.0'
+# gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 gem 'therubyracer', platforms: :ruby
 
@@ -54,6 +54,7 @@ group :development do
   gem 'terminal-notifier-guard', '~> 1.6.1'
   gem 'guard-rspec', require: false
   gem 'pry-rails'
+  gem 'quiet_assets'
 end
 
 group :production do
@@ -63,3 +64,6 @@ end
 gem 'allocine_parser', github: 'Rykian/allocine'
 gem 'figaro' # Handle configuration
 
+source 'https://rails-assets.org' do
+  gem 'rails-assets-bootstrap'
+end
