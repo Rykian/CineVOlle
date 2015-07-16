@@ -7,16 +7,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
 <body>
+  <div class="container">
+    <div class="header clearfix" id="header">
+      <nav>
+        <ul class="nav nav-pills pull-right">
+          <li role="presentation" class="active"><%= link_to t('header.home'), root_path %></a></li>
+          <li role="presentation"><%= link_to t('header.about'), '#' %></li>
+          <li role="presentation"><%= link_to t('header.contact'), '#' %></li>
+        </ul>
+      </nav>
+      <h3 class="text-muted">CineVOlle</h3>
+    </div>
 
-<% flash.each do |name, message| -%>
-  <div class="alert alert-<%= name %> alert-dismissible" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    <%= raw message %>
+    <% flash.each do |name, message| -%>
+      <div class="alert alert-<%= name %> alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <%= raw message %>
+      </div>
+    <% end -%>
+
+    <%= yield %>
+
   </div>
-<% end -%>
-
-<%= yield %>
-
-<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>

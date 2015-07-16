@@ -1,26 +1,11 @@
+<div class="jumbotron">
+  <h1>CineVOlle</h1>
+  <p class="lead"><%=t 'welcome.description' %></p>
 
-    <div class="container">
-      <div class="header clearfix">
-        <nav>
-          <ul class="nav nav-pills pull-right">
-            <li role="presentation" class="active"><%= link_to t('header.home'), root_path %></a></li>
-            <li role="presentation"><%= link_to t('header.about'), '#' %></li>
-            <li role="presentation"><%= link_to t('header.contact'), '#' %></li>
-          </ul>
-        </nav>
-        <h3 class="text-muted">CineVOlle</h3>
-      </div>
-
-      <div class="jumbotron">
-        <h1>CineVOlle</h1>
-        <p class="lead"><%=t 'welcome.description' %></p>
-
-        <%= form_tag '/register', class: 'form-inline' do %>
-          <div class="form-group">
-            <input type="email" name="email" class="form-control input-lg" placeholder="Votre email" required="required" />
-            <button type="submit" class="btn btn-lg btn-success"><%=t 'welcome.signup' %></button>
-          </div>
-        <% end %>
-      </div>
-
-    </div> <!-- /container -->
+  <%= form_tag '/register', class: 'form-inline' do %>
+    <div class="form-group">
+      <input type="email" name="email" class="form-control input-lg" placeholder="Votre email" required="required" />
+      <button type="submit" class="btn btn-lg btn-success"><%=t 'welcome.signup' %></button>
+    </div>
+  <% end %>
+</div>
