@@ -1,3 +1,4 @@
+# Theaters sessions (linked to movies)
 class Session < ActiveRecord::Base
   belongs_to :movie
 
