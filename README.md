@@ -1,4 +1,4 @@
-![https://circleci.com/gh/Rykian/CineVOlle.svg?style=shield&circle-token=b2c64bdd56b588ca977e151958f93a669de2a9ca](CircleCI)
+![CircleCI](https://circleci.com/gh/Rykian/CineVOlle.svg?style=shield&circle-token=b2c64bdd56b588ca977e151958f93a669de2a9ca)
 
 CineVOlle
 =========
