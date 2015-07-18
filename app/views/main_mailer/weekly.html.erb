@@ -1,0 +1,13 @@
+<h1>CineVOlle</h1>
+
+<p>
+  <%=t '.intro' %>
+  <ul>
+    <% @current_week.each do |movie| %>
+      <li>
+        <strong><%= movie.title %></strong> :
+        <%= movie.sessions.where(date: current_theater_week).pluck(:date).map {|d| l d, format: :short}.to_sentence %>
+      </li>
+    <% end %>
+  </ul>
+</p>

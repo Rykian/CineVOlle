@@ -220,3 +220,8 @@ fr:
     add:
       success: Votre adresse email a été ajoutée avec succès à notre liste
       error: Votre adresse email est déjà présente dans notre base ou est mal formée
+
+  main:
+    weekly:
+      subject: Séance en VO pour la semaine du %{begin} au %{end}
+      intro: "Films en VO à l'affiche cette semaine :"

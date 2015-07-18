@@ -12,4 +12,16 @@ namespace :cinevolle do
 
     AllocineConverter.update_sessions(original_versions)
   end
+
+  desc 'Sending newsletter with OV sessions'
+  task send_newsletter: :environment do
+    next if Date.today.wday != 3
+    movies = Movie.joins(:sessions).where(
+      'sessions.date' => current_week
+    ).distinct
+
+    User.all.each do |user|
+      MainMailer.weekly(user).deliver_later
+    end if movies.count > 0
+  end
 end
