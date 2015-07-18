@@ -10,6 +10,7 @@ RSpec.describe WelcomeController, type: :controller do
 
   describe 'POST register' do
     it 'display a success flash message' do
+      User.where(email: 'test@example.com').delete_all
       expect do
         post :register, email: 'test@example.com'
       end.to change { User.count }.by(1)
@@ -25,6 +26,7 @@ RSpec.describe WelcomeController, type: :controller do
     end
 
     it 'return a JSON with an success message' do
+      User.where(email: 'test@example.com').delete_all
       post :register, email: 'test@example.com', format: 'json'
       expect(JSON.parse(response.body)['success'])
         .to eq I18n.t('email.add.success')
