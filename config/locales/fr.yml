@@ -220,6 +220,9 @@ fr:
     add:
       success: Votre adresse email a été ajoutée avec succès à notre liste
       error: Votre adresse email est déjà présente dans notre base ou est mal formée
+    remove:
+      success: Votre adresse a bien été effacée de notre base de donnée, vous ne recevrez plus d'email de notre part.
+      error: Votre adresse email ne fait pas partie de notre base de donnée
 
   main:
     weekly:

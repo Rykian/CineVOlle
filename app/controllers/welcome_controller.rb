@@ -24,4 +24,11 @@ class WelcomeController < ApplicationController
       format.json { render json: { result => t(result, scope: 'email.add') } }
     end
   end
+
+  def unsubscribe
+    destroyed_users = User.destroy_all(email: params[:email])
+    result = destroyed_users.count > 0 ? :success : :error
+    flash[result] = t("email.remove.#{result}")
+    redirect_to root_path
+  end
 end

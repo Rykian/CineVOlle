@@ -38,4 +38,21 @@ RSpec.describe WelcomeController, type: :controller do
         .to eq I18n.t('email.add.error')
     end
   end
+
+  describe 'GET unsubscribe' do
+    email = 'test@example.com'
+
+    it 'unsubscribe user successfully' do
+      User.create(email: email)
+      get :unsubscribe, email: email
+      expect(User.where(email: email).count).to be == 0
+      expect(flash[:success]).to eq I18n.t('email.remove.success')
+    end
+
+    it 'returns an error when user does not exists in our database' do
+      User.destroy_all(email: email)
+      get :unsubscribe, email: email
+      expect(flash[:error]).to eq I18n.t('email.remove.error')
+    end
+  end
 end

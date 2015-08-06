@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   post '/register' => 'welcome#register'
+  get '/unsubscribe' => 'welcome#unsubscribe', as: :unsubscribe
 
   # The priority is based upon order of creation: first created -> highest
   # priority.
