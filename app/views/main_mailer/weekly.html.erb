@@ -12,4 +12,4 @@
   </ul>
 </p>
 
-<p style="font-size: 10px; text-align: center;"><%= link_to 'Se désinscrire', unsubscribe_url(email: @user.email) %></p>
+<p style="font-size: 10px; text-align: center;"><%= link_to t('.unsubscribe'), unsubscribe_url(email: @user.email) %></p>

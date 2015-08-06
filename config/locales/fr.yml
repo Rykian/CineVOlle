@@ -224,7 +224,8 @@ fr:
       success: Votre adresse a bien été effacée de notre base de donnée, vous ne recevrez plus d'email de notre part.
       error: Votre adresse email ne fait pas partie de notre base de donnée
 
-  main:
+  main_mailer:
     weekly:
       subject: Séance en VO pour la semaine du %{begin} au %{end}
       intro: "Films en VO à l'affiche cette semaine :"
+      unsubscribe: Se désinscrire
