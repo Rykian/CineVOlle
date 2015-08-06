@@ -216,6 +216,12 @@ fr:
       next: Pas de film en VO la semaine prochaine !
     current: Cette semaine
     next: La semaine prochaine
+    about:
+      purpose: CineVOlle est une application crée par %{author} permettant d'être notifié des séances de film en version originale au Cinéville de Laval.
+      goals: "L'application a deux buts :"
+      promotion: La promotion des séances de cinéma en version originale dans une ville de taille moyenne.
+      demonstration: Une application de démonstration ayant pour but de mettre en application les connaissances accumulées ces dernières années.
+      available_on_github: L'application est <a href="%{github}">disponible sur Github</a>, n'hésitez pas à la forker et à y apporter des modifications !
   email:
     add:
       success: Votre adresse email a été ajoutée avec succès à notre liste
