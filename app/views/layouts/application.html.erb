@@ -11,9 +11,15 @@
     <div class="header clearfix" id="header">
       <nav>
         <ul class="nav nav-pills pull-right">
-          <li role="presentation" class="active"><%= link_to t('header.home'), root_path %></a></li>
-          <li role="presentation"><%= link_to t('header.about'), '#' %></li>
-          <li role="presentation"><%= link_to t('header.contact'), '#' %></li>
+          <%- [
+            { page: 'header.home' , path: root_path },
+            { page: 'header.about', path: about_path },
+            { page: 'header.contact', path: '#' }
+          ].each do |link| %>
+            <li role="presentation"<% if request.env['PATH_INFO'] == link[:path] %> class="active"<% end %>>
+              <%= link_to t(link[:page]), link[:path] %>
+            </li>
+          <%- end %>
         </ul>
       </nav>
       <h3 class="text-muted">CineVOlle</h3>
