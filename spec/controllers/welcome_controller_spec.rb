@@ -62,7 +62,7 @@ RSpec.describe WelcomeController, type: :controller do
         begin
           Rails.cache.clear # Clearing the cache to empty previous sessions
         rescue
-          Logger.debug('Cache uninitialized')
+          Rails.logger.debug('Cache uninitialized')
         end
 
         expect do
@@ -90,7 +90,7 @@ RSpec.describe WelcomeController, type: :controller do
         begin
           Rails.cache.clear # Clearing the cache to empty previous sessions
         rescue
-          Logger.debug('Cache uninitialized')
+          Rails.logger.debug('Cache uninitialized')
         end
 
         expect do
