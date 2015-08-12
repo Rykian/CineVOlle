@@ -2,3 +2,4 @@ SMTP_HOST: smtp.example.com
 SMTP_PORT: '25'
 SMTP_USERNAME: test
 SMTP_PASSWORD: test
+CONTACT_EMAIL: contact@example.com

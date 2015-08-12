@@ -222,6 +222,14 @@ fr:
       promotion: La promotion des séances de cinéma en version originale dans une ville de taille moyenne.
       demonstration: Une application de démonstration ayant pour but de mettre en application les connaissances accumulées ces dernières années.
       available_on_github: L'application est <a href="%{github}">disponible sur Github</a>, n'hésitez pas à la forker et à y apporter des modifications !
+    contact:
+      name: Nom
+      email: Adresse Email
+      message: Message
+      send: Envoyer le message !
+    contact_send:
+      error: Vous devez attendre avant d'envoyer une nouvelle demande de contact !
+      success: Votre demande de contact a été transmise !
   email:
     add:
       success: Votre adresse email a été ajoutée avec succès à notre liste

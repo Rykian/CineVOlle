@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   post '/register' => 'welcome#register'
   get '/unsubscribe' => 'welcome#unsubscribe', as: :unsubscribe
   get '/about' => 'welcome#about', as: :about
+  get '/contact' => 'welcome#contact', as: :contact
+  post '/contact' => 'welcome#contact_send', as: :contact_send
 
   # The priority is based upon order of creation: first created -> highest
   # priority.

@@ -31,4 +31,23 @@ class WelcomeController < ApplicationController
     flash[result] = t("email.remove.#{result}")
     redirect_to root_path
   end
+
+  def contact_send
+    result = :error
+    Rails.cache.fetch("contact.flood_control.#{session.id}",
+                      expires_in: 1.hour) do
+      MainMailer.contact(params[:name], params[:email], params[:message])
+        .deliver_later
+      result = :success
+    end
+
+    message = t(".#{result}")
+    respond_to do |format|
+      format.html do
+        flash[result] = message
+        redirect_to(:root)
+      end
+      format.json { render json: { result => message } }
+    end
+  end
 end

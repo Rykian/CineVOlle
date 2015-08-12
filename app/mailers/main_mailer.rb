@@ -19,4 +19,16 @@ class MainMailer < ApplicationMailer
     mail(to: user.email,
          subject: subject)
   end
+
+  # Send contact requests
+  # @param [String] name
+  # @param [String] email
+  # @param [String] message
+  def contact(name, email, message)
+    @name = name
+    @email = email
+    @message = message
+
+    mail(to: ENV['CONTACT_EMAIL'])
+  end
 end

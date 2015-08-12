@@ -21,7 +21,7 @@ RSpec.describe TheaterWeekHelper, type: :helper do
     end
 
     it 'not include today + a week' do
-      expect(current_theater_week).not_to cover Date.today + 1.week
+      expect(current_theater_week).not_to cover Date.today + 1.week + 1.second
     end
 
     it 'not include today - a week' do
@@ -39,7 +39,7 @@ RSpec.describe TheaterWeekHelper, type: :helper do
     end
 
     it 'not include today + 2 week' do
-      expect(next_theater_week).not_to cover Date.today + 2.weeks
+      expect(next_theater_week).not_to cover Date.today + 2.weeks + 1.second
     end
   end
 end
