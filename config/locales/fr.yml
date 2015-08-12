@@ -228,8 +228,8 @@ fr:
       message: Message
       send: Envoyer le message !
     contact_send:
-      error: Vous devez attendre avant d'envoyer une nouvelle demande de contact !
-      success: Votre demande de contact a été transmise !
+      error: Vous devez attendre avant d'envoyer une nouvelle demande !
+      success: Votre demande a été transmise !
   email:
     add:
       success: Votre adresse email a été ajoutée avec succès à notre liste
@@ -243,3 +243,5 @@ fr:
       subject: Séance en VO pour la semaine du %{begin} au %{end}
       intro: "Films en VO à l'affiche cette semaine :"
       unsubscribe: Se désinscrire
+    contact:
+      subject: Contact

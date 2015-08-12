@@ -59,7 +59,12 @@ RSpec.describe WelcomeController, type: :controller do
   describe 'POST contact' do
     context 'as HTML' do
       it 'displays a success message if flood control wasn\'t triggered' do
-        Rails.cache.clear # Clearing the cache to empty previous sessions
+        begin
+          Rails.cache.clear # Clearing the cache to empty previous sessions
+        rescue
+          Logger.debug('Cache uninitialized')
+        end
+
         expect do
           post :contact_send, name: 'Example',
                               email: 'user@example.com',
@@ -82,7 +87,12 @@ RSpec.describe WelcomeController, type: :controller do
 
     context 'as JSON' do
       it 'displays a success message if flood control wasn\'t triggered' do
-        Rails.cache.clear # Clearing the cache to empty previous sessions
+        begin
+          Rails.cache.clear # Clearing the cache to empty previous sessions
+        rescue
+          Logger.debug('Cache uninitialized')
+        end
+
         expect do
           post :contact_send, name: 'Example',
                               email: 'user@example.com',
