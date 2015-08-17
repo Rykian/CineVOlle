@@ -16,9 +16,7 @@ namespace :cinevolle do
   desc 'Sending newsletter with OV sessions'
   task send_newsletter: :environment do
     next if Date.today.wday != 3
-    movies = Movie.joins(:sessions).where(
-      'sessions.date' => current_week
-    ).distinct
+    movies = Movie.current_week
 
     User.all.each do |user|
       MainMailer.weekly(user).deliver_later

@@ -13,4 +13,16 @@ class Movie < ActiveRecord::Base
     end
     dates
   end
+
+  def self.current_week
+    joins(:sessions).where(
+      'sessions.date' => current_theater_week
+    ).distinct
+  end
+
+  def self.next_week
+    joins(:sessions).where(
+      'sessions.date' => next_theater_week
+    ).distinct
+  end
 end
