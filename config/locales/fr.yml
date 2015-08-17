@@ -204,18 +204,21 @@ fr:
       long: "%A %d %B %Y %Hh%M"
       short: "%d %b %Hh%M"
     pm: pm
-  header:
-    home: Accueil
-    about: A propos
-    contact: Contact
+  layouts:
+    application:
+      header:
+        home: Accueil
+        about: A propos
+        contact: Contact
   welcome:
-    description: Avoir un mail, chaque semaine, contenant vos séances en VO au Cinéville de Laval
-    signup: S'inscrire
-    no_movie:
-      current: Pas de film en VO cette semaine !
-      next: Pas de film en VO la semaine prochaine !
-    current: Cette semaine
-    next: La semaine prochaine
+    index:
+      description: Avoir un mail, chaque semaine, contenant vos séances en VO au Cinéville de Laval
+      signup: S'inscrire
+      no_movie:
+        current: Pas de film en VO cette semaine !
+        next: Pas de film en VO la semaine prochaine !
+      current: Cette semaine
+      next: La semaine prochaine
     about:
       purpose: CineVOlle est une application crée par %{author} permettant d'être notifié des séances de film en version originale au Cinéville de Laval.
       goals: "L'application a deux buts :"

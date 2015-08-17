@@ -12,9 +12,9 @@
       <nav>
         <ul class="nav nav-pills pull-right">
           <%- [
-            { page: 'header.home' , path: root_path },
-            { page: 'header.about', path: about_path },
-            { page: 'header.contact', path: contact_path }
+            { page: '.header.home' , path: root_path },
+            { page: '.header.about', path: about_path },
+            { page: '.header.contact', path: contact_path }
           ].each do |link| %>
             <li role="presentation"<% if request.env['PATH_INFO'] == link[:path] %> class="active"<% end %>>
               <%= link_to t(link[:page]), link[:path] %>

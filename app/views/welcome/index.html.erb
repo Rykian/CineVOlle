@@ -1,11 +1,11 @@
 <div class="jumbotron">
   <h1>CineVOlle</h1>
-  <p class="lead"><%=t 'welcome.description' %></p>
+  <p class="lead"><%=t '.description' %></p>
 
   <%= form_tag '/register', class: 'form-inline' do %>
     <div class="form-group">
       <input type="email" name="email" class="form-control input-lg" placeholder="Votre email" required="required" />
-      <button type="submit" class="btn btn-lg btn-success"><%=t 'welcome.signup' %></button>
+      <button type="submit" class="btn btn-lg btn-success"><%=t '.signup' %></button>
     </div>
   <% end %>
 </div>
@@ -13,10 +13,10 @@
 <div>
   <ul class="nav nav-tabs">
     <li role="presentation" class="active">
-      <a href="#" data-week="current"><%=t 'welcome.current' %></a>
+      <a href="#" data-week="current"><%=t '.current' %></a>
     </li>
     <li role="presentation">
-      <a href="#" data-week="next"><%=t 'welcome.next' %></a>
+      <a href="#" data-week="next"><%=t '.next' %></a>
     </li>
   </ul>
 
@@ -34,7 +34,7 @@
           <% end %>
         <% end %>
       <% else %>
-        <p class="text-center"><%=t 'welcome.no_movie.' + (i == 0 ? 'current' : 'next') %></p>
+        <p class="text-center"><%=t '.no_movie.' + (i == 0 ? 'current' : 'next') %></p>
       <% end %>
     </div>
   <% end %>
