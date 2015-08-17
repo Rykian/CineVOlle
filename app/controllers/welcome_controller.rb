@@ -33,15 +33,9 @@ class WelcomeController < ApplicationController
   end
 
   def contact_send
-    result = :error
-    Rails.cache.fetch("contact.flood_control.#{session.id}",
-                      expires_in: 1.hour) do
-      MainMailer.contact(params[:name], params[:email], params[:message])
-        .deliver_later
-      result = :success
-    end
-
+    result = send_email(params)
     message = t(".#{result}")
+
     respond_to do |format|
       format.html do
         flash[result] = message
@@ -49,5 +43,20 @@ class WelcomeController < ApplicationController
       end
       format.json { render json: { result => message } }
     end
+  end
+
+  private
+
+  # Relative to #contact_send, just send contact email
+  # @return [Symbol] return status of the send : `:success` or `:error`
+  def send_email(params)
+    result = :error
+    Rails.cache.fetch("contact.flood_control.#{session.id}",
+                      expires_in: 1.hour) do
+      MainMailer.contact(params[:name], params[:email],
+                         params[:message]).deliver_later
+      result = :success
+    end
+    result
   end
 end

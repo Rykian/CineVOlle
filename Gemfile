@@ -48,13 +48,13 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'shoulda-matchers', require: false
   gem 'email_spec'
+  gem 'pry-rails'
 end
 
 group :development do
   gem 'guard'
   gem 'terminal-notifier-guard', '~> 1.6.1'
   gem 'guard-rspec', require: false
-  gem 'pry-rails'
   gem 'quiet_assets'
 end
 

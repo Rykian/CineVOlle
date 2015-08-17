@@ -1,19 +1,14 @@
 # Main mailer class
 class MainMailer < ApplicationMailer
-  include TheaterWeekHelper
-  helper TheaterWeekHelper
-
   # Send summary of next theater session
   # @param [User] user
   def weekly(user)
     @user = user
-    current_week = current_theater_week
-    @current_week = Movie.joins(:sessions).where(
-      'sessions.date' => current_week
-    ).distinct
+    week = ApplicationController.helpers.current_theater_week
+    @current_week = Movie.current_week
 
-    subject = default_i18n_subject(begin: l(current_week.begin, format: :long),
-                                   end: l(current_week.end, format: :long))
+    subject = default_i18n_subject(begin: l(week.begin, format: :long),
+                                   end: l(week.end, format: :long))
 
     headers['List-Unsubscribe'] = unsubscribe_url(email: user.email)
     mail(to: user.email,
@@ -29,6 +24,6 @@ class MainMailer < ApplicationMailer
     @email = email
     @message = message
 
-    mail(to: ENV['CONTACT_EMAIL'])
+    mail(to: ENV['CONTACT_EMAIL'], reply_to: @email)
   end
 end
