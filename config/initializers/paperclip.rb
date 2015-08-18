@@ -23,12 +23,16 @@ begin
   end
 
   set_paperclip_options nil, storage: 'PAPERCLIP_STORAGE',
+                             url: 'PAPERCLIP_URL',
+                             path: 'PAPERCLIP_PATH',
                              s3_credentials: {
                                bucket: 'PAPERCLIP_BUCKET',
                                access_key_id: 'S3_ACCESS_KEY_ID',
                                secret_access_key: 'S3_SECRET_ACCESS_KEY' }
 
-  unless Object.const_defined?('AWS') && ENV['S3_ACCESS_KEY_ID'].nil? && ENV['S3_SECRET_ACCESS_KEY'].nil?
+  unless Object.const_defined?('AWS') &&
+         ENV['S3_ACCESS_KEY_ID'].nil? &&
+         ENV['S3_SECRET_ACCESS_KEY'].nil?
     AWS.config(
       access_key_id: ENV['S3_ACCESS_KEY_ID'],
       secret_access_key: ENV['S3_SECRET_ACCESS_KEY'])
