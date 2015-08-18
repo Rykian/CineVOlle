@@ -1,5 +1,7 @@
 # Main mailer class
 class MainMailer < ApplicationMailer
+  helper :theater_week
+
   # Send summary of next theater session
   # @param [User] user
   def weekly(user)

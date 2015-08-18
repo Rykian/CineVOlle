@@ -246,5 +246,10 @@ fr:
       subject: Séance en VO pour la semaine du %{begin} au %{end}
       intro: "Films en VO à l'affiche cette semaine :"
       unsubscribe: Se désinscrire
+      by: Un film de %{directors}
+      actors: Avec %{actors}
+      plot: "Résumé :"
+      sessions: "Séances :"
+      see_on_allocine: Voir la fiche Allociné du film
     contact:
       subject: Contact

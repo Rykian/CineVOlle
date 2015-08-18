@@ -2,6 +2,10 @@
 class Movie < ActiveRecord::Base
   has_many :sessions
   validates_uniqueness_of :aid
+  has_attached_file :poster, styles: {
+    small: '200x200>'
+  }
+  validates_attachment_content_type :poster, content_type: %r{\Aimage\/.*\Z}
 
   # Return sessions grouped by date
   # @return [Hash<Date,DateTime>]

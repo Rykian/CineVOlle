@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150714163336) do
+ActiveRecord::Schema.define(version: 20150817182448) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,8 +20,15 @@ ActiveRecord::Schema.define(version: 20150714163336) do
     t.integer  "aid"
     t.string   "title"
     t.integer  "runtime"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.string   "poster_file_name"
+    t.string   "poster_content_type"
+    t.integer  "poster_file_size"
+    t.datetime "poster_updated_at"
+    t.text     "plot"
+    t.string   "actors",              default: [],              array: true
+    t.string   "directors",           default: [],              array: true
   end
 
   create_table "sessions", force: :cascade do |t|
