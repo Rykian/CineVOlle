@@ -30,10 +30,10 @@ begin
                                access_key_id: 'S3_ACCESS_KEY_ID',
                                secret_access_key: 'S3_SECRET_ACCESS_KEY' }
 
-  unless Object.const_defined?('AWS') &&
+  unless !Object.const_defined?('AWS') &&
          ENV['S3_ACCESS_KEY_ID'].nil? &&
          ENV['S3_SECRET_ACCESS_KEY'].nil?
-    AWS.config(
+    Object.const_get('AWS').config(
       access_key_id: ENV['S3_ACCESS_KEY_ID'],
       secret_access_key: ENV['S3_SECRET_ACCESS_KEY'])
   end

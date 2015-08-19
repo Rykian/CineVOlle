@@ -2,4 +2,5 @@ SMTP_HOST: smtp.example.com
 SMTP_PORT: '25'
 SMTP_USERNAME: test
 SMTP_PASSWORD: test
+DEFAULT_HOST: http://localhost:3000
 CONTACT_EMAIL: contact@example.com
