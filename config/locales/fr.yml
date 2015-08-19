@@ -208,15 +208,15 @@ fr:
     application:
       header:
         home: Accueil
-        about: A propos
+        about: À propos
         contact: Contact
   welcome:
     index:
-      description: Avoir un mail, chaque semaine, contenant vos séances en VO au Cinéville de Laval
+      description: Recevoir un mail, chaque semaine, indiquant vos séances en VO au Cinéville de Laval
       signup: S'inscrire
       no_movie:
         current: Pas de film en VO cette semaine !
-        next: Pas de film en VO la semaine prochaine !
+        next: Pas de film en VO la semaine prochaine ou leur programmation n'a pas été encore indiquée !
       current: Cette semaine
       next: La semaine prochaine
     about:
@@ -227,7 +227,7 @@ fr:
       available_on_github: L'application est <a href="%{github}">disponible sur Github</a>, n'hésitez pas à la forker et à y apporter des modifications !
     contact:
       name: Nom
-      email: Adresse Email
+      email: Adresse email
       message: Message
       send: Envoyer le message !
     contact_send:

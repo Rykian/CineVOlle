@@ -21,12 +21,12 @@ class AllocineConverter
   # @return [Movie] Old or newly created movie
   def self.find_or_create_movie(movie)
     amovie = Allocine::Movie.new(movie['code'])
-    Movie.where(aid: movie['code']).first_or_create(
+    Movie.where(aid: amovie.id).first_or_create(
       aid: amovie.id,
       title: amovie.title,
       runtime: amovie.length,
       poster: URI.parse(amovie.poster),
-      plot: amovie.plot(false),
+      plot: ActionView::Base.full_sanitizer.sanitize(amovie.plot(false)),
       actors: amovie.actors_name,
       directors: amovie.directors_name
     )
