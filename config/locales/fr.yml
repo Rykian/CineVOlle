@@ -220,11 +220,9 @@ fr:
       current: Cette semaine
       next: La semaine prochaine
     about:
-      purpose: CineVOlle est une application crée par %{author} permettant d'être notifié des séances de film en version originale au Cinéville de Laval.
-      goals: "L'application a deux buts :"
-      promotion: La promotion des séances de cinéma en version originale dans une ville de taille moyenne.
-      demonstration: Une application de démonstration ayant pour but de mettre en application les connaissances accumulées ces dernières années.
-      available_on_github: L'application est <a href="%{github}">disponible sur Github</a>, n'hésitez pas à la forker et à y apporter des modifications !
+      purpose: Cinevolle est une application minimaliste développée avec Ruby on rails par %{author}, permettant d'être notifié des séances de films en version originale au Cinéville de Laval.
+      goal: L'application a pour but de promouvoir les séances de cinéma en version originale dans une ville de taille moyenne.
+      available_on_github: Le code est <a href="%{github}">disponible sur Github</a>, n'hésitez pas à la forker et à y apporter des modifications !
     contact:
       name: Nom
       email: Adresse email

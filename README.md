@@ -3,7 +3,7 @@
 CineVOlle
 =========
 
-CineVOlle purpose is to send each weeks a newsletter with theater screening in original version in Laval.
+CineVOlle updates its users weekly with a list of undubbed foreign movies projected in the cinema Cineville, in the town of Laval.
 
 Requirements
 ------------
@@ -13,7 +13,7 @@ Requirements
 Installation
 ------------
 
-* Create or reuse an existent docker machine (<https://docs.docker.com/machine/>)
+* Create or reuse an existing docker machine (<https://docs.docker.com/machine/>)
 * Launch PostgreSQL service in docker with Docker Compose: `docker-compose up`
 * Launch Rails integrated server with `rails s`
 * Go to <http://localhost:3000>
@@ -35,7 +35,7 @@ rake cinevolle:update_screenings
 
 ### Sending newsletter
 
-Newsletter is a rake task wich could be launched only on wednesday. It sends email only if there is screenings in native-language version
+Newsletter is a rake task wich could be launched only on wednesday. It sends email only if there are screenings in the native-language version
 Type the following command in terminal :
 ```
 rake cinevolle:send_newsletter
