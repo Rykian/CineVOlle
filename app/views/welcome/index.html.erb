@@ -28,7 +28,7 @@
           <% movie.sessions_by_date_for(current_theater_week).each do |date, datetime| %>
             <ul>
               <% datetime.each do |d| %>
-                <%=l d, format: :short %>
+                <%=l d, format: :long %>
               <% end %>
             </ul>
           <% end %>

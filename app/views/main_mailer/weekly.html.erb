@@ -10,7 +10,7 @@
       <%=t '.actors', actors: movie.actors.to_sentence %><br />
     </p>
     <p><strong><%=t '.plot' %></strong> <%= movie.plot %></p>
-    <p><strong><%=t '.sessions' %></strong> <%= movie.sessions.where(date: current_theater_week).pluck(:date).map {|d| l d, format: :short}.to_sentence %></p>
+    <p><strong><%=t '.sessions' %></strong> <%= movie.sessions.where(date: current_theater_week).pluck(:date).map {|d| l d, format: :long}.to_sentence %></p>
     <%= link_to t('.see_on_allocine'), "http://www.allocine.fr/film/fichefilm_gen_cfilm=#{movie.aid}.html" %>
   </div>
 <% end %>
