@@ -253,3 +253,10 @@ fr:
       see_on_allocine: Voir la fiche Allociné du film
     contact:
       subject: Contact
+
+  shared:
+    movie:
+      by: Un film de %{directors}
+      actors: Avec %{actors}
+      plot: "Résumé :"
+      sessions: "Séances :"

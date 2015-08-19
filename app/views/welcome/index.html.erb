@@ -24,14 +24,7 @@
     <div class="movie-list" id="<%= i== 0 ? 'current' : 'next' %>">
       <% if week.count > 0 %>
         <% week.each do |movie| %>
-          <h2><%= movie.title %></h2>
-          <% movie.sessions_by_date_for(current_theater_week).each do |date, datetime| %>
-            <ul>
-              <% datetime.each do |d| %>
-                <%=l d, format: :long %>
-              <% end %>
-            </ul>
-          <% end %>
+          <%= render partial: 'shared/movie.html.erb', locals: { movie: movie } %>
         <% end %>
       <% else %>
         <p class="text-center"><%=t '.no_movie.' + (i == 0 ? 'current' : 'next') %></p>

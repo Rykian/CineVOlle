@@ -29,4 +29,8 @@ class Movie < ActiveRecord::Base
       'sessions.date' => ApplicationController.helpers.next_theater_week
     ).distinct
   end
+
+  def allocine_link
+    "http://www.allocine.fr/film/fichefilm_gen_cfilm=#{aid}.html"
+  end
 end

@@ -1,0 +1,12 @@
+<div class="movie">
+  <%= image_tag movie.poster.url(:small) %>
+  <h2><%= movie.title %></h2>
+  <div class="directors"><%= t 'shared.movie.by', directors: movie.directors.to_sentence %></div>
+  <div class="actors"><%= t 'shared.movie.actors', actors: movie.actors.to_sentence %></div>
+  <p class="plot"><strong><%= t 'shared.movie.plot' %></strong> <%= movie.plot %></p>
+  <div class="sessions"><strong><%= t 'shared.movie.sessions' %></strong>
+
+  <%= movie.sessions_by_date_for(current_theater_week).values.flatten.map { |v| l v, format: :long }.to_sentence %></div>
+
+  <div class="see_on_allocine"><a href="<%= movie.allocine_link %>">Voir sur Allocine</a></div>
+</div>

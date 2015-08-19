@@ -1,0 +1,16 @@
+.movie {
+  position: relative;
+  margin: 10px;
+
+  img {
+    float: left;
+    margin-right: 10px;
+  }
+
+  .see_on_allocine {
+    top: 0;
+    position: absolute;
+    text-align: right;
+    width: 100%;
+  }
+}
