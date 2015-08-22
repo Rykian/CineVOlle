@@ -2,7 +2,7 @@
   <h1>CineVOlle</h1>
   <p class="lead"><%=t '.description' %></p>
 
-  <%= form_tag '/register', class: 'form-inline' do %>
+  <%= form_tag '/register', class: 'form-inline xhr-enabled' do %>
     <div class="form-group">
       <input type="email" name="email" class="form-control input-lg" placeholder="Votre email" required="required" />
       <button type="submit" class="btn btn-lg btn-success"><%=t '.signup' %></button>

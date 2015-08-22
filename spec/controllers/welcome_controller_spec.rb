@@ -57,63 +57,48 @@ RSpec.describe WelcomeController, type: :controller do
   end
 
   describe 'POST contact' do
-    context 'as HTML' do
-      it 'displays a success message if flood control wasn\'t triggered' do
-        begin
-          Rails.cache.clear # Clearing the cache to empty previous sessions
-        rescue
-          Rails.logger.debug('Cache uninitialized')
-        end
-
-        expect do
-          post :contact_send, name: 'Example',
-                              email: 'user@example.com',
-                              message: 'lipsum'
-        end.to change { ActionMailer::Base.deliveries.count }.by 1
-        expect(response).to redirect_to root_path
-        expect(flash[:success]).to eq I18n.t('welcome.contact_send.success')
+    it 'displays a success message if flood control wasn\'t triggered' do
+      begin
+        Rails.cache.clear # Clearing the cache to empty previous sessions
+      rescue
+        Rails.logger.debug('Cache uninitialized')
       end
 
-      it 'triggers flood control' do
-        2.times do
-          post :contact_send, name: 'Example',
-                              email: 'user@example.com',
-                              message: 'lipsum'
-          expect(response).to redirect_to root_path
-        end
-        expect(flash[:error]).to eq I18n.t('welcome.contact_send.error')
-      end
+      expect do
+        post :contact_send, contact: {
+          name: 'Example',
+          email: 'user@example.com',
+          message: 'lipsum' }
+      end.to change { ActionMailer::Base.deliveries.count }.by 1
+      expect(response).to redirect_to root_path
+      expect(flash[:success]).to eq I18n.t('welcome.contact_send.success')
     end
 
-    context 'as JSON' do
-      it 'displays a success message if flood control wasn\'t triggered' do
-        begin
-          Rails.cache.clear # Clearing the cache to empty previous sessions
-        rescue
-          Rails.logger.debug('Cache uninitialized')
-        end
+    it 'triggers flood control' do
+      2.times do
+        post :contact_send, contact: {
+          name: 'Example',
+          email: 'user@example.com',
+          message: 'lipsum' }
+        expect(response).to render_template :contact
+      end
+      expect(flash[:error]).to eq I18n.t('welcome.contact_send.flood')
+    end
 
-        expect do
-          post :contact_send, name: 'Example',
-                              email: 'user@example.com',
-                              message: 'lipsum',
-                              format: :json
-        end.to change { ActionMailer::Base.deliveries.count }.by 1
-
-        expect(JSON.parse(response.body)['success'])
-          .to eq I18n.t('welcome.contact_send.success')
+    it 'display an error message when form is invalid' do
+      # Clearing the cache to empty previous sessions
+      begin
+        Rails.cache.clear
+      rescue
+        Rails.logger.debug('Cache uninitialized')
       end
 
-      it 'triggers flood control' do
-        2.times do
-          post :contact_send, name: 'Example',
-                              email: 'user@example.com',
-                              message: 'lipsum',
-                              format: :json
-        end
-        expect(JSON.parse(response.body)['error'])
-          .to eq I18n.t('welcome.contact_send.error')
-      end
+      post :contact_send, contact: {
+        name: '',
+        email: 'test',
+        message: '' }
+      expect(flash[:error]).to eq I18n.t('welcome.contact_send.invalid')
+      expect(response).to render_template :contact
     end
   end
 end

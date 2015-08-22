@@ -23,7 +23,7 @@ $(function() {
              displayResult,
              'json')
     }
-    $('form').on('submit', handleSubmit);
+    $('form.xhr-enabled').on('submit', handleSubmit);
   }
   subscribe();
 

@@ -230,7 +230,8 @@ fr:
       message: Message
       send: Envoyer le message !
     contact_send:
-      error: Vous devez attendre avant d'envoyer une nouvelle demande !
+      flood: Vous devez attendre avant d'envoyer une nouvelle demande !
+      invalid: Votre formulaire contient des erreurs, veuillez vérifier que vos champs sont correctement remplis !
       success: Votre demande a été transmise !
   email:
     add:

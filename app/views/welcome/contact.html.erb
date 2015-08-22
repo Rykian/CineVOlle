@@ -1,15 +1,15 @@
-<%= form_tag(contact_send_path) do %>
+<%= form_for(@contact, url: contact_send_path) do |f| %>
   <div class="form-group">
-    <%= label_tag :name, t('.name') %>
-    <%= text_field_tag :name, nil, class: 'form-control' %>
+    <%= f.label :name, t('.name') %>
+    <%= f.text_field :name, class: 'form-control' %>
   </div>
   <div class="form-group">
-    <%= label_tag :email, t('.email') %>
-    <%= email_field_tag :email, nil, class: 'form-control' %>
+    <%= f.label :email, t('.email') %>
+    <%= f.email_field :email, class: 'form-control' %>
   </div>
   <div class="form-group">
-    <%= label_tag :message, t('.message') %>
-    <%= text_area_tag :message, nil, rows: 10, class: 'form-control' %>
+    <%= f.label :message, t('.message') %>
+    <%= f.text_area :message, rows: 10, class: 'form-control' %>
   </div>
-  <%= submit_tag t('.send'), class: 'btn btn-default' %>
+  <%= f.submit t('.send'), class: 'btn btn-default' %>
 <% end %>
