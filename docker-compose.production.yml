@@ -2,12 +2,10 @@ version: '2'
 services:
   db:
     image: postgres
-    ports:
-      - 5432:5432
   web:
-    build: .
-    volumes:
-      - .:/usr/src/app
+    build:
+      context: ./
+      dockerfile: Dockerfile.production
     ports:
       - "3000:3000"
     links:
@@ -15,4 +13,5 @@ services:
     depends_on:
       - db
     environment:
-      RAILS_ENV: development
+      SECRET_KEY_BASE: $SECRET_KEY_BASE
+      DATABASE_URL: $DATABASE_URL

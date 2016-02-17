@@ -83,6 +83,4 @@ test:
 #
 production:
   <<: *default
-  database: CineVOlle_production
-  username: CineVOlle
-  password: <%= ENV['CINEVOLLE_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
