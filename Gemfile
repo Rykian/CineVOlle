@@ -65,6 +65,7 @@ end
 gem 'allocine_parser', github: 'Rykian/allocine'
 gem 'figaro' # Handle configuration
 gem 'paperclip', '~> 4.3'
+gem 'puma'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap'

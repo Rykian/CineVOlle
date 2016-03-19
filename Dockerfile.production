@@ -2,10 +2,12 @@ FROM rails:4.2
 
 ENV RAILS_ENV=production
 
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
-ADD . /usr/src/app/
+RUN mkdir -p /app
+WORKDIR /app
+ADD ./Gemfile /app/
+ADD ./Gemfile.lock /app/
 RUN bundle install
+ADD . /app/
 RUN bundle exec rake assets:precompile
 
 CMD ["rails", "server", "-b", "0.0.0.0"]

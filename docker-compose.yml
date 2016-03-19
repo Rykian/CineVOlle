@@ -4,6 +4,7 @@ services:
     image: postgres
     ports:
       - 5432:5432
+
   web:
     build: .
     volumes:
@@ -16,3 +17,9 @@ services:
       - db
     environment:
       RAILS_ENV: development
+
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - 1025:1025
+      - 8025:8025
