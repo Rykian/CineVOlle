@@ -8,7 +8,7 @@ services:
   web:
     build: .
     volumes:
-      - .:/usr/src/app
+      - .:/app
     ports:
       - "3000:3000"
     links:
@@ -17,6 +17,7 @@ services:
       - db
     environment:
       RAILS_ENV: development
+      DATABASE_URL: postgres://postgres@db/CineVOlle_development
 
   mailhog:
     image: mailhog/mailhog
